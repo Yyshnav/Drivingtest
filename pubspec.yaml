@@ -34,6 +34,9 @@ dependencies:
   flutter_holo_date_picker: 
   image_picker:
   animated_notch_bottom_bar:
+  flutter_rating_bar:
+  flutter_credit_card:
+  flutter_upi_india:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -63,7 +66,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+      - assets/images/card.jpeg.jpg
+  #    - assets/images/pay.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
