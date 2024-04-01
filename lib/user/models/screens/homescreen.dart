@@ -1,4 +1,4 @@
-import 'package:driving_test_automation/LLtest.dart';
+import 'package:driving_test_automation/user/models/screens/LLtest.dart';
 import 'package:driving_test_automation/constants/size.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

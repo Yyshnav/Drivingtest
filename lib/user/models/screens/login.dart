@@ -1,6 +1,6 @@
 import 'package:driving_test_automation/customeWidgets/textfield.dart';
-import 'package:driving_test_automation/home.dart';
-import 'package:driving_test_automation/screens/bottomNavBar.dart';
+import 'package:driving_test_automation/user/models/screens/home.dart';
+import 'package:driving_test_automation/user/models/screens/bottomNavBar.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {

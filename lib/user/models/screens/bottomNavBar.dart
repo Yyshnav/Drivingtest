@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
-import 'package:driving_test_automation/home.dart';
-import 'package:driving_test_automation/nearby.dart';
-import 'package:driving_test_automation/screens/homescreen.dart';
-import 'package:driving_test_automation/userprofile.dart';
+import 'package:driving_test_automation/user/models/screens/home.dart';
+import 'package:driving_test_automation/user/models/screens/nearby.dart';
+import 'package:driving_test_automation/user/models/screens/homescreen.dart';
+import 'package:driving_test_automation/user/models/screens/userprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
