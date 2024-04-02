@@ -51,12 +51,17 @@ class _RequestlistState extends State<Requestlist> {
                     padding: const EdgeInsets.fromLTRB(50,10,50,10),
                     child: Text("Approved",style: TextStyle(fontSize: 13,fontWeight: FontWeight.w600,color:Color.fromARGB(227, 90, 88, 88)),),
                   )),
-              ]
-              
-            
+              ],
             ),
+          ),Row(crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+              CircleAvatar(
+              radius: 30,backgroundColor: Color.fromARGB(255, 129, 135, 136), )
+              
+            ],
           )]
           )
+          
           );
   }
 }
