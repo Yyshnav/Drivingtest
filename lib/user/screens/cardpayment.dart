@@ -2,7 +2,7 @@ import 'package:driving_test_automation/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-import 'package:driving_test_automation/user/models/screens/cardpayment.dart';
+import 'package:driving_test_automation/user/screens/cardpayment.dart';
 
 
 class Cardpayment extends StatefulWidget {

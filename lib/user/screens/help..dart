@@ -3,13 +3,6 @@ import 'package:driving_test_automation/constants/size.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-// class Help extends StatelessWidget {
-
-// }
-
-
-
-
 class Help extends StatelessWidget {
   Help({super.key});
 
@@ -27,7 +20,7 @@ class Help extends StatelessWidget {
                 CircleAvatar(radius: 20,child:Center(child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back_ios_new,color: Color.fromARGB(219, 45, 44, 44),))),backgroundColor: Colors.white),
                 w25,
                
-               Text('Raise a complaint',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
+               Text('Send your Feedback',style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.bold),),
                 ]
             ),),
             SizedBox(height: 10,),
@@ -106,7 +99,7 @@ class Help extends StatelessWidget {
                                               TextButton(onPressed: ()
                                               {
                                                 
-                                              },child: Text("Raise a complaint",style: TextStyle(color: Colors.white),),),
+                                              },child: Text("Raise your feedback",style: TextStyle(color: Colors.white),),),
                                             ],
                                           ),
                                         ),

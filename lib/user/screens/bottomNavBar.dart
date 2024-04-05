@@ -1,10 +1,11 @@
 import 'dart:ui';
 
 import 'package:animated_notch_bottom_bar/animated_notch_bottom_bar/animated_notch_bottom_bar.dart';
-import 'package:driving_test_automation/user/models/screens/home.dart';
-import 'package:driving_test_automation/user/models/screens/nearby.dart';
-import 'package:driving_test_automation/user/models/screens/homescreen.dart';
-import 'package:driving_test_automation/user/models/screens/userprofile.dart';
+import 'package:driving_test_automation/user/screens/help..dart';
+import 'package:driving_test_automation/user/screens/home.dart';
+import 'package:driving_test_automation/user/screens/nearby.dart';
+import 'package:driving_test_automation/user/screens/homescreen.dart';
+import 'package:driving_test_automation/user/screens/userprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -19,6 +20,7 @@ class Bottom extends StatelessWidget {
     HomeScreen(),
     Myprofile(),
     NearBy(),
+    Help()
     
   ];
 
@@ -80,6 +82,17 @@ class Bottom extends StatelessWidget {
               color: Colors.blueAccent,
             ),
             itemLabel: ' Help',
+          ),
+          const BottomBarItem(
+            inActiveItem: Icon(
+              Icons.settings,
+              color: Colors.white,
+            ),
+            activeItem: Icon(
+              Icons.settings,
+              color: Colors.blueAccent,
+            ),
+            itemLabel: ' Settings',
           ),
         ],
         onTap: (int value) {

@@ -1,6 +1,6 @@
 import 'package:driving_test_automation/constants/size.dart';
 import 'package:driving_test_automation/customeWidgets/textfield.dart';
-import 'package:driving_test_automation/user/models/screens/datePicker.dart';
+import 'package:driving_test_automation/user/screens/datePicker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

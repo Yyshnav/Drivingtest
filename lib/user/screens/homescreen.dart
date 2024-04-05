@@ -1,5 +1,9 @@
-import 'package:driving_test_automation/user/models/screens/LLtest.dart';
+import 'package:driving_test_automation/user/screens/LLtest.dart';
 import 'package:driving_test_automation/constants/size.dart';
+import 'package:driving_test_automation/user/screens/bottomNavBar.dart';
+import 'package:driving_test_automation/user/screens/help..dart';
+import 'package:driving_test_automation/user/screens/nearby.dart';
+import 'package:driving_test_automation/user/screens/userprofile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -32,38 +36,65 @@ class HomeScreen extends StatelessWidget {
               ],
             )),
             Container(
-              child: Row(
-                children: [
-                  Icon(Icons.person,color: Color.fromARGB(213, 150, 148, 148),),w25,Text("My Profile",),
-                ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Myprofile(),));
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.person,color: Color.fromARGB(213, 150, 148, 148),),w25,Text("My Profile",),
+                  ],
+                ),
               ),
             ),h15,
             Container(
-              child: Row(
-                children: [
-                  Icon(Icons.location_on,color: Color.fromARGB(213, 150, 148, 148)),w25,Text("Near By"),
-                ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => NearBy(),));
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.location_on,color: Color.fromARGB(213, 150, 148, 148)),w25,Text("Near By"),
+                  ],
+                ),
               ),
             ),h15,
             Container(
-              child: Row(
-                children: [
-                  Icon(Icons.help_center,color: Color.fromARGB(213, 150, 148, 148)),w25,Text("Help Center"),
-                ],
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Help(),));
+                   },
+                child: Row(
+                  children: [
+                    Icon(Icons.help_center,color: Color.fromARGB(213, 150, 148, 148)),w25,Text("Help Center"),
+                  ],
+                ),
               ),
             ),h15,
             Container(
-              child: Row(
-                children: [
-                  Icon(Icons.privacy_tip,color: Color.fromARGB(213, 150, 148, 148),),w25,Text("About Us"),
-                ],
+              child: InkWell(
+                onTap: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => NearBy(),));
+
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.privacy_tip,color: Color.fromARGB(213, 150, 148, 148),),w25,Text("About Us"),
+                  ],
+                ),
               ),
             ),h15,
             Container(
-              child: Row(
-                children: [
-                  Icon(Icons.logout_sharp,color: Color.fromARGB(213, 150, 148, 148)),w25,Text("Log out"),
-                ],
+              child: InkWell(
+                onTap: ()
+                {
+
+                },
+                child: Row(
+                  children: [
+                    Icon(Icons.logout_sharp,color: Color.fromARGB(213, 150, 148, 148)),w25,Text("Log out"),
+                  ],
+                ),
               ),
             )
           ],

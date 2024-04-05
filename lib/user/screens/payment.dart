@@ -1,10 +1,10 @@
 import 'package:driving_test_automation/constants/size.dart';
-import 'package:driving_test_automation/user/models/screens/homescreen.dart';
+import 'package:driving_test_automation/user/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
-import 'package:driving_test_automation/user/models/screens/payment.dart';
-import 'package:driving_test_automation/user/models/screens/payment.dart';
+import 'package:driving_test_automation/user/screens/payment.dart';
+import 'package:driving_test_automation/user/screens/payment.dart';
 
 class PaymentOptionScreen extends StatelessWidget {
   @override

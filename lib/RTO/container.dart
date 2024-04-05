@@ -6,18 +6,18 @@ class ContainerSc extends StatelessWidget {
   @override
       Widget build(BuildContext context) {
       return Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: const Color.fromARGB(255, 239, 238, 238),
         body:  Container( 
           alignment: Alignment.bottomCenter,
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
-              Text("HI"),
+              
               Container(
-                  height:670.0,
+                  height:680.0,
                   decoration:  BoxDecoration(
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 207, 25, 25),
                     borderRadius: BorderRadius.vertical(
                       top: Radius.elliptical(
                             MediaQuery.of(context).size.width, 100.0)),
