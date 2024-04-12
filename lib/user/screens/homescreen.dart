@@ -1,7 +1,11 @@
+import 'dart:ffi';
+
+import 'package:driving_test_automation/constants/constantVariables.dart';
 import 'package:driving_test_automation/user/screens/LLtest.dart';
 import 'package:driving_test_automation/constants/size.dart';
 import 'package:driving_test_automation/user/screens/bottomNavBar.dart';
 import 'package:driving_test_automation/user/screens/help..dart';
+import 'package:driving_test_automation/user/screens/loginNew.dart';
 import 'package:driving_test_automation/user/screens/nearby.dart';
 import 'package:driving_test_automation/user/screens/userprofile.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,9 +33,10 @@ class HomeScreen extends StatelessWidget {
           children: [
             DrawerHeader(child: Column(
               children: [
-                CircleAvatar(radius: 40,),
-                Text("GUEST"),
-                Text("9744513952")
+                CircleAvatar(radius: 40,backgroundImage: AssetImage("assets/images/th.jpeg"),),
+                
+                Text(profile.value[0].name.toUpperCase()),
+                Text(profile.value[0].email),
                 
               ],
             )),
@@ -74,7 +79,6 @@ class HomeScreen extends StatelessWidget {
             Container(
               child: InkWell(
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => NearBy(),));
 
                 },
                 child: Row(
@@ -88,7 +92,7 @@ class HomeScreen extends StatelessWidget {
               child: InkWell(
                 onTap: ()
                 {
-
+                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => AuthThreePage1(),));
                 },
                 child: Row(
                   children: [
@@ -116,12 +120,15 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40),bottomRight: Radius.circular(40))
               ),
               child: Row(children: [
-                w10, CircleAvatar(radius: 44,),w5,
+                w10, CircleAvatar(radius: 44,
+                  backgroundImage: AssetImage("assets/images/th.jpeg"),
+                ),w5,
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Welcome',style: TextStyle(fontWeight: FontWeight.w600),),
-                  Text("GUEST",style: TextStyle(color: Colors.white, fontSize: 15,fontWeight: FontWeight.w500),)
+                   Text(profile.value[0].name.toUpperCase(),style: TextStyle(color: Colors.white) ,),
+                  
                 ],
               )],),
             ),

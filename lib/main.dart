@@ -1,3 +1,4 @@
+import 'package:driving_test_automation/Apicheck.dart';
 import 'package:driving_test_automation/RTO/container.dart';
 import 'package:driving_test_automation/RTO/requestlist.dart';
 import 'package:driving_test_automation/RTO/rtohom1.dart';
@@ -9,6 +10,7 @@ import 'package:driving_test_automation/user/screens/changepass.dart';
 import 'package:driving_test_automation/user/screens/help..dart';
 import 'package:driving_test_automation/user/screens/instructions.dart';
 import 'package:driving_test_automation/user/screens/login.dart';
+import 'package:driving_test_automation/user/screens/loginNew.dart';
 import 'package:driving_test_automation/user/screens/nearby.dart';
 import 'package:driving_test_automation/user/screens/payment.dart';
 import 'package:driving_test_automation/rtodemohome.dart';
@@ -35,13 +37,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: 
-
+      //ApiCheckScreen()
       //ForgotPasswordPage()
-      
-     // NearBy()
+    // changepass()
      //Exam()
-    
-     AuthThreePage()
+    //OtpScreen()
+     AuthThreePage1()
       //DateOfBirth()
       //HomeScreen()
       //HomeScreen()

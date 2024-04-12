@@ -1,7 +1,8 @@
 class Userreg{
-  final String username ,email,phonenumber,address,aadhar_number,dob,gender,bloodgroup,imagepath,password;
+  final String username ,email,aadhar_number,dob,gender,imagepath,password;
 
-  Userreg({required this.username, required this.email, required this.phonenumber, required this.address, required this.aadhar_number, required this.dob, required this.gender, required this.bloodgroup, required this.imagepath, required this.password});
+  Userreg(this.username, this.email, this.aadhar_number, this.dob, this.gender, this.imagepath, this.password);
 
+ 
 
 }

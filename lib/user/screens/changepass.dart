@@ -1,95 +1,103 @@
+import 'package:driving_test_automation/constants/colors.dart';
+import 'package:driving_test_automation/constants/size.dart';
+import 'package:driving_test_automation/customeWidgets/textfield.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class ChangePasswordPage extends StatefulWidget {
-  static const String path = "lib/src/pages/change_password_page.dart";
-
-  const ChangePasswordPage({Key? key}) : super(key: key);
+class changepass extends StatefulWidget {
+  changepass({super.key});
 
   @override
-  _ChangePasswordPageState createState() => _ChangePasswordPageState();
+  State<changepass> createState() => _MyprofileState();
 }
 
-class _ChangePasswordPageState extends State<ChangePasswordPage> {
-  late TextEditingController _oldPasswordController;
-  late TextEditingController _newPasswordController;
-  late TextEditingController _confirmPasswordController;
-
-  @override
-  void initState() {
-    super.initState();
-    _oldPasswordController = TextEditingController();
-    _newPasswordController = TextEditingController();
-    _confirmPasswordController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _oldPasswordController.dispose();
-    _newPasswordController.dispose();
-    _confirmPasswordController.dispose();
-    super.dispose();
-  }
+class _MyprofileState extends State<changepass> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Change Password'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      backgroundColor: c1,  
+     body: Column(
           children: [
-            TextFormField(
-              controller: _oldPasswordController,
-              decoration: InputDecoration(
-                labelText: 'Old Password',
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Row(
+                children: [
+                  CircleAvatar(radius: 20,child:Center(child: IconButton(onPressed: (){}, icon:Icon(Icons.arrow_back_ios_new,color: Color.fromARGB(219, 45, 44, 44),))),backgroundColor: Colors.white),
+                 w25,
+                 Text('Change password',style: TextStyle(fontSize: 15,color: Colors.black,fontWeight: FontWeight.bold),),
+                  ]
+                  
               ),
-              obscureText: true,
             ),
-            SizedBox(height: 16.0),
-            TextFormField(
-              controller: _newPasswordController,
-              decoration: InputDecoration(
-                labelText: 'New Password',
-              ),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            TextFormField(
-              controller: _confirmPasswordController,
-              decoration: InputDecoration(
-                labelText: 'Confirm New Password',
-              ),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                // Add logic to handle changing password
-                String oldPassword = _oldPasswordController.text;
-                String newPassword = _newPasswordController.text;
-                String confirmPassword = _confirmPasswordController.text;
-
-                if (newPassword == confirmPassword) {
-                  // Passwords match, proceed with changing password
-                  // Add your logic here
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Password changed successfully')),
-                  );
-                } else {
-                  // Passwords don't match, show error message
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Passwords do not match')),
-                  );
-                }
-              },
-              child: Text('Change Password'),
-            ),
-          ],
-        ),
-      ),
-    );
+             Expanded(
+            child: Container(
+              width: double.infinity,
+              //height: double.infinity,
+                                decoration: BoxDecoration(color: Colors.white,
+      borderRadius: BorderRadius.only(topLeft: Radius.circular(45),topRight: Radius.circular(45),)),
+      child: Column( 
+                  children: [
+                    h20,
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(Icons.remove_red_eye),
+                          hintText: "enter old password",
+                        filled: true,
+                        fillColor: Color.fromARGB(228, 249, 246, 246) ,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(15)
+                        )
+                      ),),
+                    ),h10,Padding(
+                       padding: const EdgeInsets.all(12.0),
+                       child: TextFormField(
+                        decoration: InputDecoration(hintText: "enter new password",
+                         suffixIcon: Icon(Icons.remove_red_eye),
+                        filled: true,
+                        fillColor: Color.fromARGB(228, 249, 246, 246) ,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(15)
+                        )
+                                         ),),
+                     ),
+                     h10,
+                     Padding(
+                       padding: const EdgeInsets.all(12.0),
+                       child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "enter confirm password",
+                          suffixIcon: Icon(Icons.remove_red_eye),
+                        filled: true,
+                        fillColor: Color.fromARGB(228, 249, 246, 246) ,
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide.none,
+                          borderRadius: BorderRadius.circular(15))),),
+                     ),
+                       h30,
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Container(
+                                child: Center(
+                                    child: Text(
+                                  'Change password',
+                                  style: TextStyle(color: Colors.white),
+                                )),
+                                color: Color.fromARGB(255, 98, 204, 236),
+                                width: 300,
+                                height: 50,
+                              ),
+                            ),]),)),
+                 
+                  ])
+     );
+        
+      
   }
 }

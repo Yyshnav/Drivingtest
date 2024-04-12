@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Listview extends StatelessWidget {
-  const Listview({super.key});
+  const Listview({super.key, required Column child});
 
   @override
   Widget build(BuildContext context) {

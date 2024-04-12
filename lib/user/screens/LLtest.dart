@@ -1,5 +1,7 @@
 import 'package:driving_test_automation/constants/colors.dart';
 import 'package:driving_test_automation/constants/size.dart';
+import 'package:driving_test_automation/user/models/learnersApplyModel.dart';
+import 'package:driving_test_automation/user/services/learnersapplyApi.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -60,7 +62,17 @@ class _ExamState extends State<Exam> {
   String districtvalue = 'Kasargod';
   String talukavalue= 'Kozhikode';
   String villagevalue= 'Beypore(CT)';
-   String classvalue= 'Motor cycle without Gear(MCWOG)';
+  String classvalue= 'Motor cycle without Gear(MCWOG)';
+   TextEditingController guardiannamecontroller=TextEditingController();
+   final placeofbirthcontroller=TextEditingController();
+   final dobcontroller=TextEditingController();
+   final controller=TextEditingController();
+   final pincodecontroller=TextEditingController();
+   final agecontroller=TextEditingController();
+   final permanantaddresscontroller=TextEditingController();
+   final qualificationcontroller=TextEditingController();
+   final identification1controller=TextEditingController();
+   final identification2controller=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -228,6 +240,7 @@ class _ExamState extends State<Exam> {
                                   Text("1."),w5,
                                   Expanded(
                                     child: CupertinoTextField(
+                                      controller: identification1controller,
                                       
                                     ),
                                     
@@ -242,6 +255,7 @@ class _ExamState extends State<Exam> {
                                   Text("2."),w5,
                                   Expanded(
                                     child: CupertinoTextField(
+                                      controller: identification2controller,
                                       
                                     ),
                                     
@@ -264,75 +278,173 @@ class _ExamState extends State<Exam> {
                                   items: vehicleclass.map((String items) {
                                     return DropdownMenuItem(
                                       value: items,
-                                      child: Text(items),
+                                      child: Text(items,style: TextStyle(fontSize: 13),),
                                     );
                                   }).toList(),
                                   onChanged: (String? newValue) {
                                     setState(() {
-                                      districtvalue = newValue!;
+                                      classvalue = newValue!;
                                     });
                                   },
                                 ),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
+                           Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Guardian name"),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: w!*0.8,
                               child: Row(
                                 children: [
-                                  Icon(
-                                    Icons.adjust_rounded,
-                                  ),
-                                  w10,
+                                  Text(""),w5,
                                   Expanded(
-                                      child: Text(
-                                          "Subject like rules and regulations of the traffic signages are include in the test. ",
-                                          style: TextStyle(
-                                              color: const Color.fromARGB(
-                                                  255, 134, 131, 131)))),
-                                  //Text(""),
+                                    child: CupertinoTextField(
+                                      controller: guardiannamecontroller,
+                                      
+                                    ),
+                                    
+                                  ),
                                 ],
                               ),
                             ),
-                            h20,
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
+                             Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Age"),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: w!*0.8,
                               child: Row(
                                 children: [
-                                  Icon(
-                                    Icons.adjust_rounded,
-                                  ),
-                                  w10,
+                                  Text(""),w5,
                                   Expanded(
-                                      child: Text(
-                                          "15 questions are asked in the test at rhe random out of which 9 questons are to required to be answered correctly to pass the test. ",
-                                          style: TextStyle(
-                                              color: const Color.fromARGB(
-                                                  255, 134, 131, 131)))),
-                                  //Text(""),
+                                    child: CupertinoTextField(
+                                      controller: agecontroller,
+                                      
+                                    ),
+                                    
+                                  ),
+                                ],
+                              ),
+                            ), Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("dob"),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: w!*0.8,
+                              child: Row(
+                                children: [
+                                  Text(""),w5,
+                                  Expanded(
+                                    child: CupertinoTextField(
+                                      
+                                      controller: dobcontroller,
+                                    ),
+                                    
+                                  ),
                                 ],
                               ),
                             ),
-                            h20,
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("place of birth"),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: w!*0.8,
                               child: Row(
                                 children: [
-                                  Icon(
-                                    Icons.adjust_rounded,
+                                  Text(""),w5,
+                                  Expanded(
+                                    child: CupertinoTextField(
+                                      controller: placeofbirthcontroller,
+                                      
+                                    ),
+                                    
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("pincode"),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: w!*0.8,
+                              child: Row(
+                                children: [
+                                  Text(""),w5,
+                                  Expanded(
+                                    child: CupertinoTextField(
+                                     controller: pincodecontroller, 
+                                    ),
+                                    
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("Qualification"),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              width: w!*0.8,
+                              child: Row(
+                                children: [
+                                  Text(""),w5,
+                                  Expanded(
+                                    child: CupertinoTextField(
+                                      controller: qualificationcontroller,
+                                      
+                                    ),
+                                    
                                   ),
                                 ],
                               ),
                             ),
                             h30,
-                            Container(
-                              child: Center(
-                                  child: Text(
-                                'APPLY LL TEST',
-                                style: TextStyle(color: Colors.white),
-                              )),
-                              color: Color.fromARGB(255, 98, 204, 236),
-                              width: 300,
-                              height: 50,
+                            InkWell(onTap: (){
+                              learnersapply();
+                            },
+                              child: Container(
+                                child: Center( 
+                                    child: Text(
+                                  'APPLY LL TEST',
+                                  style: TextStyle(color: Colors.white),
+                                )),
+                                color: Color.fromARGB(255, 98, 204, 236),
+                                width: 300,
+                                height: 50,
+                              ),
                             ),
                           ],
                         )
@@ -344,5 +456,25 @@ class _ExamState extends State<Exam> {
             ],
           ),
         ));
+  }
+  learnersapply() async{
+    final user = LernersApply(rto: dropdownvalue, permanentaddress: permanantaddresscontroller.text, district: districtvalue, taluk: talukavalue, village: villagevalue, identification1: identification1controller.text, identification2: identification2.text, classs: classvalue, guardianname:guardiannamecontroller.text , dob: dobcontroller.text, placeofbirth: placeofbirthcontroller.text, pincode: pincodecontroller.text, qualification: qualificationcontroller.text, age: agecontroller.text,);
+    final res = await learnersapplyApi(user);
+    if (res=='success') {
+   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("successfully registered"),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.all(10),
+                duration: Duration(seconds: 8)));
+
+ } else {
+   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("something went wrong"),
+                backgroundColor: Colors.red,
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.all(10),
+                duration: Duration(seconds: 8)));
+ } 
   }
 }
